@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://kronos5693.github.io/EstudioPolo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy":"npm rum build",
+    "predeploy": "npm run build",
     "deploy":"gh-pages -d dist"
   },
   "dependencies": {
