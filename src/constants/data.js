@@ -19,7 +19,7 @@ export const ABOUT_CARDS = [
     id: 'proteccion',
     iconPath: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
     title: 'Protección Legal',
-    desc: 'Brindamos una defensa sólida y estratégica para proteger sus intereses en cada caso, garantizando la mejor representación legal posible.',
+    desc: 'Según la necesidad del caso, abordamos la mejor solución para su resolución. Esto permite entender todas las posibilidades y elegir la que mejor represente los intereses del cliente.',
   },
   {
     id: 'atencion',
@@ -29,7 +29,7 @@ export const ABOUT_CARDS = [
       { d: 'M12 6v6l4 2' },
     ],
     title: 'Atención Inmediata',
-    desc: 'Entendemos la urgencia de los asuntos legales. Nuestro equipo está disponible para atender sus necesidades con la rapidez que requieren.',
+    desc: 'Nuestro equipo está disponible para atender sus necesidades con la rapidez que requieren. Entendemos la urgencia de los asuntos legales de cada cliente.',
   },
   {
     id: 'equipo',
@@ -40,21 +40,13 @@ export const ABOUT_CARDS = [
       { d: 'M16 3.13a4 4 0 0 1 0 7.75' },
     ],
     title: 'Equipo Experto',
-    desc: 'Contamos con abogados especializados en diversas áreas del derecho, con formación continua y un profundo conocimiento de la legislación vigente.',
+    desc: 'Contamos con abogados especializados en diversas áreas del derecho, con formación continua y conocimiento de la legislación vigente.',
   },
 ];
 
 // ─── Practice Areas ───────────────────────────────────────────
 export const PRACTICE_AREAS = [
-  {
-    id: 'corporativo',
-    iconPaths: [
-      { d: 'M2 7h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z' },
-      { d: 'M16 7V5a4 4 0 0 0-8 0v2' },
-    ],
-    title: 'Derecho Corporativo',
-    desc: 'Asesoramiento integral para empresas en constitución, fusiones, adquisiciones, contratos comerciales y gobierno corporativo.',
-  },
+
   {
     id: 'inmobiliario',
     iconPaths: [
@@ -95,6 +87,24 @@ export const PRACTICE_AREAS = [
     title: 'Derecho Tributario',
     desc: 'Planificación fiscal, defensa ante auditorías, optimización de cargas impositivas y cumplimiento normativo.',
   },
+    {
+    id: 'publico',
+    iconPaths: [
+      { d: 'M2 7h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z' },
+      { d: 'M16 7V5a4 4 0 0 0-8 0v2' },
+    ],
+    title: 'Derecho Publico',
+    desc: 'Tramites antes los distintos Organismos del Estado ya sea administrativos como judicial.',
+  },
+   {
+    id: 'diligencias',
+    iconPaths: [
+      { d: 'M2 7h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z' },
+      { d: 'M16 7V5a4 4 0 0 0-8 0v2' },
+    ],
+    title: 'Diligencias y Gestoria Legal en General',
+    desc: 'Cedula Ley 22172. Noificaciones y Mandamientos- CABA y Provincia de Corrientes.',
+  },
 ];
 
 // ─── Contact info ─────────────────────────────────────────────
@@ -120,7 +130,7 @@ export const CONTACT_INFO = [
   {
     id: 'hours',
     label: 'Horario de Atención',
-    value: 'Lunes a Viernes: 9:00 - 18:00',
+    value: 'Lunes a Viernes: 9:00 - 18:00 (URGENCIAS)',
     iconPaths: [
       { d: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z' },
       { d: 'M12 6v6l4 2' },
@@ -131,12 +141,13 @@ export const CONTACT_INFO = [
 // ─── Select options ────────────────────────────────────────────
 export const AREA_OPTIONS = [
   { value: '',            label: 'Seleccione un área...' },
-  { value: 'corporativo', label: 'Derecho Corporativo' },
+  { value: 'diligencias', label: 'Diligencias y Gestoria Legal en General' },
   { value: 'inmobiliario',label: 'Derecho Inmobiliario' },
   { value: 'laboral',     label: 'Derecho Laboral' },
   { value: 'penal',       label: 'Derecho Penal' },
   { value: 'familiar',    label: 'Derecho Familiar' },
   { value: 'tributario',  label: 'Derecho Tributario' },
+  { value: 'publico',     label: 'Derecho Publico' },
   { value: 'otro',        label: 'Otro' },
 ];
 
@@ -151,14 +162,15 @@ export const FOOTER_COLS = [
       { href: 'contacto', label: 'Contacto' },
     ],
   },
-  {
+  { 
     title: 'Áreas Legales',
     items: [
-      { href: 'areas', label: 'Derecho Corporativo' },
+      { href: 'areas', label: 'Derecho Publico' },
       { href: 'areas', label: 'Derecho Inmobiliario' },
       { href: 'areas', label: 'Derecho Laboral' },
       { href: 'areas', label: 'Derecho Penal' },
-      { href: 'areas', label: 'Derecho Familiar' },
+      { href: 'areas', label: 'Diligencias y Gestoria Legal en General' },
+      
     ],
   },
   {

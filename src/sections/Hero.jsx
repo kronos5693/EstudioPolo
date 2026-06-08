@@ -68,7 +68,7 @@ export function Hero() {
           transition={{ delay: 0.7, duration: 0.8 }}
         >
           
-          Ofrecemos asesoramiento legal integral con un enfoque personalizado para cada cliente.
+          Ofrecemos asesoramiento jurídico integral con un enfoque personalizado para cada cliente.
         </motion.p>
 
         <motion.div
@@ -80,9 +80,9 @@ export function Hero() {
           <button
             className="btn btn-primary"
             onClick={() => scrollTo('contacto')}
-            aria-label="Solicitar una consulta gratuita"
+            aria-label="Solicitar una consulta"
           >
-            Consulta Gratuita
+            Consulta 
           </button>
           <button
             className="btn btn-outline"

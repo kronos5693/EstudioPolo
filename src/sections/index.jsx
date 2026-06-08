@@ -165,7 +165,7 @@ export function Contact() {
       <SectionHeader
         label="Contacto"
         title={<span id="contact-title">Hablemos de su caso</span>}
-        subtitle="Agende una consulta gratuita y descubra cómo podemos ayudarle a resolver su situación legal."
+        subtitle="Agende una consulta  y descubra cómo podemos ayudarle a resolver su situación legal."
       />
 
       <div className="contact__grid">
