@@ -93,7 +93,7 @@ export const PRACTICE_AREAS = [
       { d: 'M2 7h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z' },
       { d: 'M16 7V5a4 4 0 0 0-8 0v2' },
     ],
-    title: 'Derecho Publico',
+    title: 'Derecho Público',
     desc: 'Tramites antes los distintos Organismos del Estado ya sea administrativos como judicial.',
   },
    {
@@ -147,7 +147,7 @@ export const AREA_OPTIONS = [
   { value: 'penal',       label: 'Derecho Penal' },
   { value: 'familiar',    label: 'Derecho Familiar' },
   { value: 'tributario',  label: 'Derecho Tributario' },
-  { value: 'publico',     label: 'Derecho Publico' },
+  { value: 'publico',     label: 'Derecho Público' },
   { value: 'otro',        label: 'Otro' },
 ];
 
@@ -165,7 +165,7 @@ export const FOOTER_COLS = [
   { 
     title: 'Áreas Legales',
     items: [
-      { href: 'areas', label: 'Derecho Publico' },
+      { href: 'areas', label: 'Derecho Público' },
       { href: 'areas', label: 'Derecho Inmobiliario' },
       { href: 'areas', label: 'Derecho Laboral' },
       { href: 'areas', label: 'Derecho Penal' },
