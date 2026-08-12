@@ -664,39 +664,40 @@ body {
 
 /* ── Testimonial ─────────────────────────────────────── */
 .testimonial {
-  background: var(--color-white);
-  padding: 6rem 2rem;
+  background: var(--color-ink);
+  padding: clamp(90px, 13vh, 150px) clamp(24px, 6vw, 110px);
 }
 
 .testimonial__inner {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
 .testimonial__mark {
   font-family: var(--font-display);
-  font-size: 5rem;
-  color: var(--color-gold);
-  line-height: 1;
-  opacity: 0.4;
+  font-size: clamp(4rem, 8vw, 7rem);
+  color: var(--color-brass);
+  line-height: 0.6;
+  display: block;
 }
 
 .testimonial__quote {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--color-navy);
-  line-height: 1.6;
   font-style: italic;
-  margin: 1rem 0 2rem;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  color: var(--color-cream);
+  line-height: 1.45;
+  margin: 1.5rem 0 2rem;
 }
 
 .testimonial__author {
-  color: var(--color-muted);
+  color: rgba(245, 243, 238, 0.6);
   font-size: 0.95rem;
 }
 
-.testimonial__author strong { color: var(--color-navy); }
+.testimonial__author strong { color: var(--color-brass); font-weight: 600; }
 
 /* ── Contact ─────────────────────────────────────────── */
 .contact {
