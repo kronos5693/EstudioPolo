@@ -90,50 +90,41 @@ export function Areas() {
 
   return (
     <section id="areas" className="areas" aria-labelledby="areas-title">
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <div className="areas__inner">
         <SectionHeader
           label="Áreas de Práctica"
-          title={<span id="areas-title">Soluciones legales especializadas</span>}
-          subtitle="Ofrecemos asesoramiento experto en las principales áreas del derecho, adaptándonos a las necesidades específicas de cada cliente."
+          title={<span id="areas-title">Áreas de práctica</span>}
+          subtitle="Asesoramiento especializado que se adapta a la necesidad concreta de cada cliente."
         />
 
-        <motion.div
-          className="areas__grid"
+        <motion.ol
+          className="areas__list"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {PRACTICE_AREAS.map((area) => (
-            <motion.article
-              key={area.id}
-              className="area-card"
-              variants={fadeInUp}
-              whileHover={{ y: -8 }}
-              aria-label={area.title}
-            >
-              <div className="area-card__accent" aria-hidden="true" />
-              <div className="area-card__body">
-                <div className="area-card__icon" aria-hidden="true">
-                  <SvgIcon paths={getPaths(area)} size={26} />
-                </div>
-                <h3 className="area-card__title">{area.title}</h3>
-                <p className="area-card__desc">{area.desc}</p>
-                <button
-                  className="area-card__link"
-                  onClick={() => scrollTo('contacto')}
-                  aria-label={`Consultar sobre ${area.title}`}
-                >
-                  Más información
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </button>
-              </div>
-            </motion.article>
+          {PRACTICE_AREAS.map((area, i) => (
+            <motion.li key={area.id} className="area-row" variants={fadeInUp}>
+              <button
+                type="button"
+                className="area-row__btn"
+                onClick={() => scrollTo('contacto')}
+                aria-label={`Consultar sobre ${area.title}`}
+              >
+                <span className="area-row__num" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="area-row__icon" aria-hidden="true">
+                  <SvgIcon paths={getPaths(area)} size={24} color="currentColor" />
+                </span>
+                <span className="area-row__title">{area.title}</span>
+                <span className="area-row__desc">{area.desc}</span>
+                <span className="area-row__arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ol>
       </div>
     </section>
   );

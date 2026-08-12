@@ -545,87 +545,121 @@ body {
 /* ── Areas ───────────────────────────────────────────── */
 .areas {
   background: var(--color-cream);
-  padding: 6rem 2rem;
 }
 
-.areas__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
+.areas__inner {
+  max-width: 1160px;
   margin: 0 auto;
+  padding: clamp(90px, 13vh, 150px) clamp(24px, 6vw, 110px);
 }
 
-.area-card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.area-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
-}
-
-.area-card__accent {
-  height: 6px;
-  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-dark));
-}
-
-.area-card__body {
-  padding: 2.5rem 2rem;
-}
-
-.area-card__icon {
-  width: 56px;
-  height: 56px;
+.areas__list {
+  list-style: none;
   display: flex;
+  flex-direction: column;
+}
+
+.area-row {
+  border-top: 1px solid var(--color-border);
+}
+
+.area-row:last-child { border-bottom: 1px solid var(--color-border); }
+
+.area-row__btn {
+  display: grid;
+  grid-template-columns: 56px 48px minmax(0, 1fr) 44px;
+  grid-template-areas:
+    "num  icon  title arrow"
+    "num  icon  desc  desc";
   align-items: center;
-  justify-content: center;
-  background: rgba(201, 168, 76, 0.1);
-  border-radius: var(--radius-md);
-  margin-bottom: 1.5rem;
-}
-
-.area-card__title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  color: var(--color-navy);
-  margin-bottom: 0.8rem;
-}
-
-.area-card__desc {
-  color: var(--color-muted);
-  font-size: 0.92rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.area-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-gold-dark);
+  gap: clamp(14px, 3vw, 36px);
+  width: 100%;
+  padding: clamp(22px, 4vw, 38px) 8px;
   background: none;
   border: none;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.88rem;
   cursor: pointer;
-  transition: gap var(--transition-base), color var(--transition-base);
+  text-align: left;
+  color: var(--color-ink);
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    padding-left var(--transition-base);
 }
 
-.area-card__link:hover {
-  gap: 0.9rem;
-  color: var(--color-gold);
+.area-row__num   { grid-area: num; }
+.area-row__icon  { grid-area: icon; display: flex; align-items: center; }
+.area-row__title { grid-area: title; }
+.area-row__desc  { grid-area: desc; }
+.area-row__arrow { grid-area: arrow; justify-self: end; }
+
+.area-row__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-brass);
+  opacity: 0.85;
+  transition: color var(--transition-base);
 }
 
-.area-card__link:focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 4px;
-  border-radius: 2px;
+.area-row__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.6vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.area-row__desc {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 460px;
+  padding-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.4s ease;
+}
+
+.area-row__arrow {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.area-row:hover .area-row__btn,
+.area-row__btn:focus-visible {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding-left: 28px;
+}
+
+.area-row:hover .area-row__num,
+.area-row__btn:focus-visible .area-row__num { color: var(--color-brass); opacity: 1; }
+
+.area-row:hover .area-row__desc,
+.area-row__btn:focus-visible .area-row__desc { opacity: 1; max-height: 96px; }
+
+.area-row:hover .area-row__arrow,
+.area-row__btn:focus-visible .area-row__arrow { transform: translateX(6px); color: var(--color-brass); }
+
+.area-row__btn:focus-visible { outline: 2px solid var(--color-brass); outline-offset: -2px; }
+
+/* Mobile: desc siempre visible (sin hover) */
+@media (max-width: 768px) {
+  .area-row__desc {
+    opacity: 1;
+    max-height: none;
+    padding-top: 6px;
+  }
+
+  .area-row__btn {
+    grid-template-columns: 40px 36px minmax(0, 1fr) 28px;
+    gap: 10px;
+    align-items: start;
+    padding: 20px 4px;
+  }
 }
 
 /* ── Testimonial ─────────────────────────────────────── */
