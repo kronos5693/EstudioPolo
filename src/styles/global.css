@@ -143,20 +143,6 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-nav {
-  background: var(--color-gold);
-  color: var(--color-navy);
-  padding: 0.6rem 1.5rem;
-  border-radius: var(--radius-sm);
-  border: none;
-  font-size: 0.9rem;
-}
-
-.btn-nav:hover {
-  background: var(--color-gold-dark);
-  transform: translateY(-1px);
-}
-
 .btn-submit {
   width: 100%;
   padding: 1rem;
@@ -199,66 +185,107 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: padding var(--transition-base), background var(--transition-base), box-shadow var(--transition-base);
+  transition: padding var(--transition-base), background var(--transition-base), border-color var(--transition-base);
 }
 
 .navbar--transparent {
-  padding: 1.2rem 2rem;
+  padding: 1.4rem clamp(24px, 6vw, 110px);
   background: transparent;
-  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar--scrolled {
-  padding: 0.8rem 2rem;
-  background: rgba(26, 26, 46, 0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-nav);
+  padding: 0.9rem clamp(24px, 6vw, 110px);
+  background: rgba(245, 243, 238, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .navbar__inner {
-  max-width: 1200px;
+  max-width: 1160px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .navbar__brand {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--color-white);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
   background: none;
   border: none;
   cursor: pointer;
-  letter-spacing: 1px;
 }
 
-.navbar__brand span { color: var(--color-gold); }
+.navbar__brand span { color: var(--color-brass); }
 
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2.25rem;
   list-style: none;
 }
 
 .navbar__link {
+  position: relative;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-muted);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   cursor: pointer;
+  padding: 4px 0;
   transition: color var(--transition-base);
 }
 
-.navbar__link:hover,
-.navbar__link:focus-visible { color: var(--color-gold); }
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-ink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
 
-.navbar__link:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; border-radius: 2px; }
+.navbar__link:hover,
+.navbar__link:focus-visible { color: var(--color-ink); }
+
+.navbar__link:hover::after,
+.navbar__link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+
+.navbar__link:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 4px; }
+
+.btn-nav {
+  background: transparent;
+  color: var(--color-ink);
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--color-ink);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+.btn-nav:hover {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border-color: var(--color-ink);
+}
 
 /* ── Hamburger ───────────────────────────────────────── */
 .hamburger {
@@ -271,7 +298,7 @@ body {
 .hamburger__bar {
   width: 28px;
   height: 2px;
-  background: var(--color-white);
+  background: var(--color-ink);
   transition: transform var(--transition-base), opacity var(--transition-base);
   display: block;
 }
@@ -284,7 +311,7 @@ body {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: rgba(26, 26, 46, 0.98);
+  background: rgba(245, 243, 238, 0.98);
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -296,14 +323,15 @@ body {
 .mobile-menu__link {
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--color-ink);
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 500;
   cursor: pointer;
   transition: color var(--transition-base);
 }
 
-.mobile-menu__link:hover { color: var(--color-gold); }
+.mobile-menu__link:hover { color: var(--color-brass); }
 
 /* ── Hero ────────────────────────────────────────────── */
 .hero {
