@@ -1,0 +1,21 @@
+{
+  "name": "Estudio Jurídico Polo",
+  "short_name": "Est. Polo",
+  "description": "Asesoramiento legal integral con más de 15 años de experiencia.",
+  "start_url": "/EstudioPolo/",
+  "display": "browser",
+  "background_color": "#1a1a2e",
+  "theme_color": "#c9a84c",
+  "icons": [
+    {
+      "src": "/EstudioPolo/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/EstudioPolo/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
