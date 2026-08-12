@@ -31,27 +31,32 @@ function SectionHeader({ label, title, subtitle }) {
 export function About() {
   return (
     <section id="nosotros" className="about" aria-labelledby="about-title">
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <div className="about__inner">
         <SectionHeader
-          label="¿Por Qué Elegirnos?"
+          label="Por Qué Elegirnos"
           title={<span id="about-title">Compromiso con la excelencia jurídica</span>}
-          subtitle="Más de 15 años de experiencia nos respaldan como un referente en el ámbito legal, brindando soluciones efectivas y personalizadas."
+          subtitle="Más de 15 años de experiencia nos respaldan como referente legal en CABA y Corrientes, con atención personalizada."
         />
 
         <motion.div
-          className="about__grid"
+          className="about__index"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
           {ABOUT_CARDS.map((card, i) => (
-            <motion.div key={card.id} className="about__card" variants={fadeInUp}>
-              <div className="about__icon" aria-hidden="true">
-                <SvgIcon paths={getPaths(card)} size={30} />
+            <motion.div key={card.id} className="about__row" variants={fadeInUp}>
+              <span className="about__row-num" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div className="about__row-icon" aria-hidden="true">
+                <SvgIcon paths={getPaths(card)} size={26} color="#a8874a" />
               </div>
-              <h3 className="about__card-title">{card.title}</h3>
-              <p className="about__card-desc">{card.desc}</p>
+              <div>
+                <h3 className="about__row-title">{card.title}</h3>
+                <p className="about__row-desc">{card.desc}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

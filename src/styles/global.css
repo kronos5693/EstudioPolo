@@ -442,52 +442,64 @@ body {
 
 /* ── About ───────────────────────────────────────────── */
 .about {
-  background: var(--color-white);
-  padding: 6rem 2rem;
+  background: var(--color-paper);
+  padding: clamp(90px, 13vh, 150px) clamp(24px, 6vw, 110px);
 }
 
-.about__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1200px;
+.about__inner {
+  max-width: 1160px;
   margin: 0 auto;
 }
 
-.about__card {
-  text-align: center;
-  padding: 2.5rem 2rem;
-  border-radius: var(--radius-md);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+.about__index {
+  display: flex;
+  flex-direction: column;
 }
 
-.about__card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+.about__row {
+  display: grid;
+  grid-template-columns: 64px 56px 1fr;
+  gap: clamp(16px, 3vw, 40px);
+  align-items: start;
+  padding: clamp(26px, 4vw, 44px) 0;
+  border-top: 1px solid var(--color-border);
 }
 
-.about__icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 1.5rem;
+.about__row:last-child { border-bottom: 1px solid var(--color-border); }
+
+.about__row-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-brass);
+}
+
+.about__row-icon {
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-navy), var(--color-navy-deep));
-  border-radius: 50%;
+  margin-top: 2px;
 }
 
-.about__card-title {
+.about__row-title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: var(--color-navy);
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  margin-bottom: 10px;
+  transition: color var(--transition-base);
 }
 
-.about__card-desc {
+.about__row:hover .about__row-title { color: var(--color-brass); }
+
+.about__row-desc {
   color: var(--color-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  max-width: 620px;
 }
 
 /* ── Stats ───────────────────────────────────────────── */
