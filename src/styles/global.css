@@ -948,30 +948,74 @@ body {
 
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .about__grid,
-  .areas__grid   { grid-template-columns: repeat(2, 1fr); }
-  .footer__grid  { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
   .navbar__links { display: none; }
   .hamburger     { display: flex; }
 
-  .about__grid,
-  .areas__grid,
+  /* Hero: una columna, media como watermark */
+  .hero { padding-top: 130px; }
+
+  .hero__media { width: 100%; opacity: 0.14; }
+
+  .hero__inner { max-width: 100%; }
+
+  .hero__title { font-size: clamp(2.7rem, 11vw, 4rem); }
+
   .stats__grid,
   .contact__grid { grid-template-columns: 1fr; }
 
-  .contact__grid { gap: 3rem; }
   .footer__grid  { grid-template-columns: 1fr; gap: 2rem; }
   .form__row     { grid-template-columns: 1fr; }
 
-  .about,
-  .areas,
-  .testimonial,
-  .contact { padding: 4rem 1.5rem; }
+  /* About: filas apiladas */
+  .about__row {
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+  }
+
+  .about__row-num {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+
+  .about__row-icon {
+    width: 40px;
+    height: auto;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
   .stats__grid { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(odd) { border-left: none; }
+
+  .hero__actions .btn { width: 100%; }
+}
+
+/* ── Focus visible ───────────────────────────────────── */
+.btn:focus-visible,
+.btn-submit:focus-visible,
+.navbar__brand:focus-visible,
+.hamburger:focus-visible,
+.mobile-menu__link:focus-visible,
+.form__input:focus-visible,
+.form__select:focus-visible,
+.form__textarea:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+/* ── Reduced motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
